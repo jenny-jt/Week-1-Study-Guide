@@ -279,6 +279,21 @@ def reverse_list(items):
     items_rev = items[::-1]
     return items_rev
 
+def reverse_list_in_place(items):
+    """ Return input list, reversed, without making a new list"""
+    low = 0
+    high = len(items)-1
+    
+    while low < high:
+        temp = items[low]
+        items[low] = items[high]
+        items[high] = temp
+
+        low += 1
+        high -= 1
+        
+    return items
+
 
 def duplicates(items):
     """Return list of words from input list which were duplicates.
@@ -348,6 +363,7 @@ def find_letter_indices(words, letter):
         if letter not in word:
             index.append(None)
     return index
+
 
 #####################################################################
 # END OF PRACTICE: You can ignore everything below.
